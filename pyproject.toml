@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-churn-ai"
+version = "0.1.0"
+description = "Production-ready customer churn prediction project for applied AI portfolio work."
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "joblib>=1.3",
+  "matplotlib>=3.8",
+  "numpy>=1.24",
+  "openpyxl>=3.1",
+  "pandas>=2.0",
+  "pydantic>=2.6",
+  "pytest>=8.0",
+  "scikit-learn>=1.3",
+  "seaborn>=0.13",
+  "streamlit>=1.32"
+]
+
+[project.optional-dependencies]
+explain = ["shap>=0.44"]
+boosting = ["xgboost>=2.0"]
+dev = ["httpx>=0.27", "ipykernel>=6.29", "nbformat>=5.9", "ruff>=0.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
