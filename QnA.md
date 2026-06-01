@@ -1,4 +1,4 @@
-# Interview Questions and Answers
+# Questions and Answers
 
 ## 1. What business problem does this project solve?
 
